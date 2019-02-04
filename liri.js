@@ -225,7 +225,6 @@ switch (inputCmd) {
             + border
             + "\tHere's a hint: "
             + hr + br
-            + "Lookup a tweet, type 'node liri.js my-tweets [profile name]'" + br
             + "Lookup a song, type 'node liri.js spotify-this-song  [song name]" + br
             + "lookup a movie, type 'node liri.js movie-this [movie name]'" + br
             + "Read from the .txt prompt, type 'do-what-it-says'" + br + hr
