@@ -1,8 +1,8 @@
 {
   "name": "liri-app",
   "version": "1.0.0",
-  "description": "liri app",
-  "main": "keys.js",
+  "description": "#####Like Siri, but Liri (a command line application)",
+  "main": "liri.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,8 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/mtconry/liri-app.git"
   },
-  "keywords": [],
-  "author": "Mike Conry",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mtconry/liri-app/issues"
@@ -19,10 +18,11 @@
   "homepage": "https://github.com/mtconry/liri-app#readme",
   "dependencies": {
     "axios": "^0.18.0",
-    "bandsintown": "^1.0.1",
+    "dotenv": "^6.2.0",
+    "keys": "^0.1.2",
     "node-spotify-api": "^1.0.7",
     "omdb": "^0.8.0",
-    "save": "^2.3.3"
-  },
-  "devDependencies": {}
+    "request": "^2.88.0",
+    "spotify": "^0.3.0"
+  }
 }

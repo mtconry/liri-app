@@ -1,19 +1,13 @@
-// require("dotenv").config();
-// var keys = require("./keys.js");
-// var spotify = new spotify(keys.spotify);
-// var omdb = new omdb(keys.omdb);
-// var bandsInTown = new bandsInTown(keys.bandsInTown);
-
 // ----------NPM------------//
-const env = require("dotenv").config();
-const key = require('./keys.js');
-const request = require("request");
-const fs = require("fs");
+var env = require("dotenv").config();
+var key = require('./keys.js');
+var request = require("request");
+var fs = require("fs");
 
 //-------API Specific npm------//
 var Spotify = require("node-spotify-api");
 var OMDB = require('omdb');
-var bandsInTown = require('bandsintown')(APP_ID);
+// var bandsInTown = require('bandsintown')(APP_ID);
 
 //-------API KEYS------//
 var spotify = new Spotify(keys.spotify);
@@ -68,7 +62,7 @@ function spotifyThisSong() {
     } else {
         query = inputQuery;
     }
-    spotify.search({ type: 'track', query: query, limit: 1 }, function (err, data) {
+    search({ type: 'track', query: query, limit: 1 }, function (err, data) {
         if (err) {
             throw err;
         }
@@ -104,7 +98,7 @@ function movieThis() {
 
     if (inputQuery === undefined) {
         movieQuery = "Mr. Nobody";
-        var queryURL = "http://www.omdbapi.com/?t=" + movieQuery + "&y=&plot=short&apikey=trilogy";
+        axios.get= "http://www.omdbapi.com/?t=" + movieQuery + "&y=&plot=short&apikey=trilogy";
         console.log("For Testing: " + queryURL + " (Mr. Nobody)");
     } else {
         movieQuery = inputQuery;
@@ -200,11 +194,6 @@ function doWhatItSays() {
 //-----------------DO THE THING----------------//
 
 switch (inputCmd) {
-    //Twitter API
-    case 'my-tweets':
-        myTweets();
-        break;
-
     //Spotify API
     case 'spotify-this-song':
         spotifyThisSong();
