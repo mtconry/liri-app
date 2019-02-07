@@ -1,6 +1,6 @@
 // ----------NPM------------//
 var env = require("dotenv").config();
-var key = require('./keys.js');
+var keys = require('./keys.js');
 var request = require("request");
 var fs = require("fs");
 
@@ -11,8 +11,8 @@ var OMDB = require('omdb');
 
 //-------API KEYS------//
 var spotify = new Spotify(keys.spotify);
-var omdb = new OMDB(keys.OMDB);
-var bandsintown = new bandsInTown(keys.bandsInTown);
+// var omdb = new OMDB(keys.OMDB);
+// var bandsintown = new bandsInTown(keys.bandsInTown);
 
 //-----LIRI COMMANDS----//
 var nodeArgs = process.argv;
@@ -62,7 +62,7 @@ function spotifyThisSong() {
     } else {
         query = inputQuery;
     }
-    search({ type: 'track', query: query, limit: 1 }, function (err, data) {
+    axios.get({ type: 'track', query: query, limit: 1 }, function (err, data) {
         if (err) {
             throw err;
         }
@@ -163,12 +163,7 @@ function doWhatItSays() {
         console.log(border + "\tYou Requested: " + inputQuery + border);
 
         switch (inputType) {
-            //Twitter API
-            case 'my-tweets':
-                tweetThis();
-                break;
-
-            //Spotify API
+           //Spotify API
             case 'spotify-this-song':
                 spotifyThisSong();
                 break;
