@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/mtconry/liri-app#readme",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "dotenv": "^6.2.0",
     "keys": "^0.1.2",
     "node-spotify-api": "^1.0.7",
