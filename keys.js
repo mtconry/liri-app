@@ -1,6 +1,6 @@
-var keys= require("./keys.js");
+// var keys= require("./keys.js");
 
-console.log("this is loaded");
+console.log("Keys Loaded");
 
 exports.spotify ={
     id: process.env.SPOTIFY_ID,
